@@ -46,7 +46,7 @@
 }
 
 .btn_cancel:hover {
-  border: none;
+  border: 0.1rem solid var(--color-black);
   background-color: var(--color-black);
   color: var(--color-white);
 }

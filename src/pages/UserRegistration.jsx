@@ -1,5 +1,53 @@
+import { useState } from "react";
 import styles from "../pages/userRegistration.module.css";
 function UserRegistration() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  function handleFirstName(e) {
+    setFirstName(e.target.value);
+  }
+
+  function handleLastName(e) {
+    setLastName(e.target.value);
+  }
+
+  function handleEmail(e) {
+    setEmail(e.target.value);
+  }
+
+  function handlePassword(e) {
+    setPassword(e.target.value);
+  }
+
+  function handleConfirmPassword(e) {
+    setConfirmPassword(e.target.value);
+  }
+
+  function handleCancel(e) {
+    e.preventDefault();
+
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
+  }
+
+  function handleSubmitRegistration(e) {
+    e.preventDefault();
+
+    const data = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password,
+    };
+    console.log(data);
+  }
   return (
     <>
       <section id="User_Registration" className={styles.section_registration}>
@@ -17,6 +65,8 @@ function UserRegistration() {
                 type="text"
                 name="userFirstName"
                 className="input_container_controller"
+                value={firstName}
+                onChange={handleFirstName}
                 id="userFirstName"
               />
             </div>
@@ -28,6 +78,8 @@ function UserRegistration() {
                 type="text"
                 name="userLastName"
                 className="input_container_controller"
+                value={lastName}
+                onChange={handleLastName}
                 id="userLastName"
               />
             </div>
@@ -39,6 +91,8 @@ function UserRegistration() {
                 type="text"
                 name="userEmail"
                 className="input_container_controller"
+                value={email}
+                onChange={handleEmail}
                 id="userEmail"
               />
             </div>
@@ -50,14 +104,41 @@ function UserRegistration() {
                 type="text"
                 name="userPassword"
                 className="input_container_controller"
+                value={password}
+                onChange={handlePassword}
                 id="userPassword"
               />
             </div>
+            <div className="input_container">
+              <label
+                htmlFor="userConfirmPassword"
+                className="input_container_label"
+              >
+                Confirm-Password
+              </label>
+              <input
+                type="text"
+                name="userConfirmPassword"
+                className="input_container_controller"
+                value={confirmPassword}
+                onChange={handleConfirmPassword}
+                id="userConfirmPassword"
+              />
+            </div>
             <div className={styles.registration_action}>
-              <button type="submit" className={`btn ${styles.btn_register}`}>
+              <button
+                type="submit"
+                onClick={handleSubmitRegistration}
+                className={`btn ${styles.btn_register}`}
+              >
                 Create Account
               </button>
-              <button className={`btn ${styles.btn_cancel}`}>Cancel</button>
+              <button
+                onClick={handleCancel}
+                className={`btn ${styles.btn_cancel}`}
+              >
+                Cancel
+              </button>
             </div>
           </form>
         </div>
