@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import styles from "../pages/login.module.css";
 function Login() {
   const [username, setUsername] = useState("");
@@ -26,52 +27,54 @@ function Login() {
   return (
     <>
       <section id="login" className={styles.section_login}>
-        <h1 className={styles.logo}>TaskB📝</h1>
+        <h1 className="logo">TaskB📝</h1>
 
         <div className={styles.login_container}>
           <h2 className={styles.login_title}>Sign into TaskBoard!</h2>
           <div className={styles.form_container}>
-            <form onSubmit={handleLoginSubmit} className={styles.form_signIn}>
-              <div className={styles.input_container}>
-                <label
-                  htmlFor="userEmail"
-                  className={styles.input_container_label}
-                >
+            <form onSubmit={handleLoginSubmit} className="form_style">
+              <div className="input_container">
+                <label htmlFor="userEmail" className="input_container_label">
                   Email
                 </label>
                 <input
                   type="text"
                   id="userEmail"
                   name="userEmail"
-                  className={styles.input_container_controller}
+                  className="input_container_controller"
                   value={username}
                   onChange={handleUsername}
                 />
               </div>
-              <div className={styles.input_container}>
-                <label
-                  htmlFor="userPassword"
-                  className={styles.input_container_label}
-                >
+              <div className="input_container">
+                <label htmlFor="userPassword" className="input_container_label">
                   Password
                 </label>
                 <input
                   type="password"
                   id="userPassword"
                   name="userPassword"
-                  className={styles.input_container_controller}
+                  className="input_container_controller"
                   value={password}
                   onChange={handlePassword}
                 />
               </div>
 
-              <a className={styles.link_forgot_password}>Forgot Password?</a>
+              <NavLink
+                to="/ForgotPassword"
+                className={styles.link_forgot_password}
+              >
+                Forgot Password?
+              </NavLink>
 
-              <button className={styles.btn_signIn}>Sign In</button>
+              <button className={`btn ${styles.btn_signIn}`}>Sign In</button>
             </form>
           </div>
           <div className={styles.link_register_container}>
-            New User?<a className={styles.link_new_register}>Register</a>
+            New User?
+            <NavLink to="/AccountCreation" className={styles.link_new_register}>
+              Register
+            </NavLink>
           </div>
         </div>
       </section>
