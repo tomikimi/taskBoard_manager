@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import styles from "../pages/login.module.css";
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   function handleUsername(e) {
     setUsername(e.target.value);
@@ -20,6 +21,8 @@ function Login() {
       username: username,
       password: password,
     };
+
+    navigate("TaskB/Dashboard");
 
     console.log(data);
   }

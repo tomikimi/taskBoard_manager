@@ -25,6 +25,8 @@ html {
   --color-dark-grey: #555;
   --color-dark-mid-grey: #818181;
   --color-dark-light-grey: #b0b0b0;
+  --color-bg: #f5f5f5;
+  --color-icon-grey: #b3b3b3;
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 

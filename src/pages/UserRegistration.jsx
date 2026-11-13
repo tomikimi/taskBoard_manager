@@ -27,6 +27,12 @@ function UserRegistration() {
     setConfirmPassword(e.target.value);
   }
 
+  function handleOnBlurConfirmPassword() {
+    if (password !== confirmPassword) {
+      window.alert("Passwords do not match...");
+    }
+  }
+
   function handleCancel(e) {
     e.preventDefault();
 
@@ -122,6 +128,7 @@ function UserRegistration() {
                 className="input_container_controller"
                 value={confirmPassword}
                 onChange={handleConfirmPassword}
+                onBlur={handleOnBlurConfirmPassword}
                 id="userConfirmPassword"
               />
             </div>
