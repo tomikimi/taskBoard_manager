@@ -1,7 +1,19 @@
+import styles from "./Dashboard.module.css";
 function Dashboard() {
   return (
     <>
-      <h1>My Dashboard Page</h1>
+      <div>
+        <h1>My Dashboard Page</h1>
+        <h1>My Dashboard Page</h1>
+        <h1>My Dashboard Page</h1>
+        <h1>My Dashboard Page</h1>
+        <h1>My Dashboard Page</h1>
+        <h1>My Dashboard Page</h1>
+        <h1>My Dashboard Page</h1>
+        <h1>My Dashboard Page</h1>
+        <h1>My Dashboard Page</h1>
+        <h1>My Dashboard Page</h1>
+      </div>
     </>
   );
 }

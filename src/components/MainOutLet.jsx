@@ -4,12 +4,12 @@ import SideBar from "./SideBar";
 function MainOutLet() {
   return (
     <>
-      <section style={{ display: "flex" }}>
-        <SideBar />
-        <main>
-          <Outlet />
-        </main>
-      </section>
+      {/* <section> */}
+      <SideBar />
+      <main>
+        <Outlet />
+      </main>
+      {/* </section> */}
     </>
   );
 }

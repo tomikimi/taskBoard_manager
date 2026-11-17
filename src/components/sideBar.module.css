@@ -1,6 +1,14 @@
+.sidebar_main {
+  display: flex;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  position: fixed;
+  z-index: 240;
+}
 .section_sidebar {
-  width: 250px;
-  /* z-index: 5; */
+  width: 0px;
+  background-color: var(--color-bg);
 }
 .sidebar_container {
   display: flex;
@@ -9,6 +17,7 @@
   padding: 1rem;
   background-color: var(--color-bg);
   box-shadow: 0px 0px 20px 0px rgb(33 32 32 / 21%);
+  position: fixed;
 }
 
 .sidebar_icon_color {
@@ -16,6 +25,7 @@
 }
 .section_mobile_header {
   display: block;
+  position: relative;
 }
 .section_laptop_menu {
   display: none;
@@ -87,11 +97,27 @@
   color: #666666;
   transition: opacity 0.2s ease;
 }
+.sidebar_main_background {
+  background-color: #00000059;
+}
+
+.logout_position {
+  /* border-top: 0.1rem solid rgb(33 32 32 / 21%); */
+  position: absolute;
+  bottom: 1px;
+}
+
+/* MOBILE S STYLES*/
+@media only screen and (min-width: 300px) {
+  .section_sidebar {
+    width: 0px;
+  }
+}
 
 /* MOBILE M STYLES*/
 @media only screen and (min-width: 350px) {
   .section_sidebar {
-    width: 222px;
+    width: 0px;
   }
 }
 
@@ -105,6 +131,10 @@
   }
   .section_laptop_menu {
     display: block;
+  }
+
+  .sidebar_main_background {
+    background-color: transparent;
   }
 
   /* Collapse SideBar Action */
@@ -137,5 +167,11 @@
   .section_sidebar.collapsed .sidebar_menu .sidebar_menu_link {
     align-self: center;
     padding: 0rem;
+  }
+
+  .logout_position {
+    /* border-top: 0.1rem solid rgb(33 32 32 / 21%); */
+    align-self: center;
+    bottom: 1px;
   }
 }
