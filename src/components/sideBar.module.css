@@ -1,23 +1,25 @@
 .sidebar_main {
-  display: flex;
+  /* display: flex; */
+  background-color: var(--color-bg);
   width: 100vw;
-  height: 100dvh;
+  /* height: 10vh; */
   overflow: hidden;
-  position: fixed;
-  z-index: 240;
+  /* position: fixed; */
+  /* z-index: 240; */
 }
 .section_sidebar {
-  width: 0px;
+  width: 240px;
   background-color: var(--color-bg);
 }
 .sidebar_container {
   display: flex;
   min-height: 100vh;
+
   flex-direction: column;
   padding: 1rem;
   background-color: var(--color-bg);
   box-shadow: 0px 0px 20px 0px rgb(33 32 32 / 21%);
-  position: fixed;
+  /* position: fixed; */
 }
 
 .sidebar_icon_color {
@@ -46,16 +48,19 @@
   display: none;
 }
 .sidebar_header {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 5rem;
+  gap: 2.5rem;
   margin-bottom: 1.2rem;
 }
 
 .sidebar_logo {
+  display: inline-flex;
   text-decoration: none;
-  font-size: 1.2rem;
   color: var(--color-black);
+}
+.sidebar_logo_text {
+  font-size: 1rem;
 }
 
 .sidebar_menu_container {
@@ -97,9 +102,9 @@
   color: #666666;
   transition: opacity 0.2s ease;
 }
-.sidebar_main_background {
+/* .sidebar_main_background {
   background-color: #00000059;
-}
+} */
 
 .logout_position {
   /* border-top: 0.1rem solid rgb(33 32 32 / 21%); */
@@ -107,22 +112,66 @@
   bottom: 1px;
 }
 
+.sideOpen {
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.sideOpen.sideShrink {
+  width: 100px;
+}
+
 /* MOBILE S STYLES*/
 @media only screen and (min-width: 300px) {
   .section_sidebar {
-    width: 0px;
+    width: 200px;
+  }
+  .sidebar_main {
+    position: fixed;
+    z-index: 240;
+    background-color: #00000059;
+  }
+  .sidebar_header {
+    gap: 3rem;
   }
 }
 
 /* MOBILE M STYLES*/
 @media only screen and (min-width: 350px) {
   .section_sidebar {
-    width: 0px;
+    width: 200px;
+  }
+  .sidebar_main {
+    position: fixed;
+    z-index: 240;
+    background-color: #00000059;
+  }
+  .sidebar_header {
+    gap: 3rem;
+  }
+}
+
+/* TABLET STYLES*/
+@media only screen and (min-width: 700px) {
+  .section_sidebar {
+    width: 240px;
+  }
+  .sidebar_main {
+    position: fixed;
+    z-index: 240;
+    background-color: #00000059;
+  }
+  .sidebar_header {
+    gap: 5rem;
   }
 }
 
 /* DESKTOP STYLES */
 @media only screen and (min-width: 900px) {
+  .sidebar_header {
+    gap: 3rem;
+  }
   .section_mobile_header {
     display: none;
   }
@@ -131,6 +180,18 @@
   }
   .section_laptop_menu {
     display: block;
+    position: relative;
+  }
+
+  .sidebar_main {
+    width: 22%;
+    position: relative;
+    z-index: 0;
+    background-color: transparent;
+  }
+
+  .shrinkWidth {
+    width: 10vw;
   }
 
   .sidebar_main_background {
@@ -138,7 +199,11 @@
   }
 
   /* Collapse SideBar Action */
-  .collapsed {
+  .section_sidebar {
+    width: 200px;
+    /* overflow: hidden; */
+  }
+  .section_sidebar.collapsed {
     width: 80px;
   }
 

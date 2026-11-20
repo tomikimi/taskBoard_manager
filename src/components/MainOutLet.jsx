@@ -5,10 +5,15 @@ function MainOutLet() {
   return (
     <>
       {/* <section> */}
-      <SideBar />
-      <main>
-        <Outlet />
-      </main>
+      <div className="main_container">
+        <SideBar />
+        <div style={{ overflowY: "auto", overflowX: "auto", width: "100%" }}>
+          <main>
+            <Outlet />
+          </main>
+        </div>
+      </div>
+
       {/* </section> */}
     </>
   );

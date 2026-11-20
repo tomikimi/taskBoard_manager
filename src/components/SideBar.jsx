@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
+  VscSymbolMethod,
   VscRightPanelShow,
   VscMenu,
   VscLibraryCompact,
@@ -24,11 +25,43 @@ function SideBar() {
   }
   return (
     <>
+      {/* <div onClick={handleSideBarView} className={styles.sidebar_main}>
+        <div>
+          <div>
+            <VscMenu />
+            <span>logo1</span>
+          </div>
+         
+          <div>
+            <div>
+              <VscRightPanelShow />
+              <span>logo2</span>
+              <aside>
+                <div>
+                  <span className={styles.sidebar_menu_title}>Main Menu</span>
+                  <NavLink className={styles.sidebar_menu_link}>
+                    <VscLibraryCompact className={styles.sidebar_icon_color} />
+                    <span className={styles.menu_link_text}>Home</span>
+                  </NavLink>
+                </div>
+                <div>
+                  <span className={styles.sidebar_menu_title}>OTHER</span>
+                  <NavLink className={styles.sidebar_menu_link}>
+                    <VscGearCompact className={styles.sidebar_icon_color} />
+                    <span className={styles.menu_link_text}>Settings</span>
+                  </NavLink>
+                </div>
+                <div></div>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </div> */}
       <div
         className={
-          sideBarView
-            ? styles.sidebar_main
-            : `${styles.sidebar_main} ${styles.sidebar_main_background}`
+          sideBarCollapse
+            ? `${styles.sidebar_main} ${styles.shrinkWidth}`
+            : styles.sidebar_main
         }
       >
         <section
@@ -50,7 +83,10 @@ function SideBar() {
                 className={styles.sidebar_icon_menu}
                 onClick={handleSideBarView}
               />
-              <NavLink className={styles.sidebar_logo}>📝TaskB</NavLink>
+              <NavLink className={styles.sidebar_logo}>
+                <VscSymbolMethod />
+                <span className={styles.sidebar_logo_text}>TaskB</span>
+              </NavLink>
             </div>
             <aside
               className={
@@ -60,7 +96,10 @@ function SideBar() {
               }
             >
               <div className={styles.sidebar_header}>
-                <NavLink className={styles.sidebar_logo}>📝TaskB</NavLink>
+                <NavLink className={styles.sidebar_logo}>
+                  <VscSymbolMethod />
+                  <span className={styles.sidebar_logo_text}>TaskB</span>
+                </NavLink>
 
                 <span>
                   <VscRightPanelShow
@@ -103,7 +142,10 @@ function SideBar() {
           <section className={styles.section_laptop_menu}>
             <aside className={styles.sidebar_container}>
               <div className={styles.sidebar_header}>
-                <NavLink className={styles.sidebar_logo}>📝TaskB</NavLink>
+                <NavLink className={styles.sidebar_logo}>
+                  <VscSymbolMethod />
+                  <span className={styles.sidebar_logo_text}>TaskB</span>
+                </NavLink>
 
                 <span>
                   <VscRightPanelShow
