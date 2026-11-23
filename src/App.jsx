@@ -5,6 +5,7 @@ import UserRegistration from "./pages/UserRegistration";
 import ForgotPassword from "./pages/ForgotPassword";
 import MainOutLet from "./components/MainOutLet";
 import Dashboard from "./pages/Dashboard";
+import MyTasks from "./pages/MyTasks";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           ></Route>
           <Route path="TaskB/" element={<MainOutLet></MainOutLet>}>
             <Route path="Dashboard" element={<Dashboard></Dashboard>}></Route>
+            <Route path="MyTasks" element={<MyTasks></MyTasks>}></Route>
           </Route>
           <Route
             path="/ForgotPassword"

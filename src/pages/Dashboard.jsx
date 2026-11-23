@@ -6,9 +6,43 @@ import {
   VscWarningCompact,
   VscSymbolEvent,
   VscEditCode,
-  VscPreview,
 } from "react-icons/vsc";
 import styles from "./Dashboard.module.css";
+import Greeting from "../components/Greeting";
+import ProjectContainer from "../components/ProjectContainer";
+const dashBoardData = {
+  todayProjects: [
+    {
+      id: 1,
+      taskName: "Finalize HomePage WireFrame",
+      dueDate: "Today - 1.00pm",
+    },
+    {
+      id: 2,
+      taskName: "Review Test Code Result",
+      dueDate: "November 20 - 1.00pm",
+    },
+    {
+      id: 3,
+      taskName: "Design Relationship Diagram for Database",
+      dueDate: "November 27, 2026 - 3.00pm",
+    },
+  ],
+  upComingProjects: [
+    {
+      id: 1,
+      taskName: "Team Meeting: Project E-Commerce KickOff",
+      dueDate: "December 10, 2026 - 1.00pm",
+    },
+  ],
+  completedProjects: [
+    {
+      id: 1,
+      taskName: "Finalize Dashboard Design for Task Board",
+      dueDate: "November 20, 2026 - 16.03pm",
+    },
+  ],
+};
 function Dashboard() {
   return (
     <>
@@ -27,10 +61,9 @@ function Dashboard() {
         </label>
       </div> */}
       <div className={styles.section_dashboard}>
-        <div className={styles.dashboard_user_greeting}>
-          <h1>Good Day👋🏽,Tomikimi!</h1>
-          <p>Let's make today productive!</p>
-        </div>
+        {/* GREETING COMPONENT */}
+        <Greeting />
+        {/* END OF GREETING COMPONENT */}
         <div className={styles.dashboard_user_stats}>
           <div className={styles.dashboard_user_stat_box}>
             <VscChecklistCompact />
@@ -74,55 +107,13 @@ function Dashboard() {
             <h2>Today's projects</h2>
             <p>Thursday, November 19, 2026</p>
           </div>
-
-          <div className={styles.dashboard_today_project_container}>
-            <div
-              className={`${styles.project_tab} ${styles.project_tab_accent}`}
-            >
-              <div className={styles.project_taskName}>
-                <VscEditCode />
-                <span className={styles.taskName}>
-                  Finalize HomePage WireFrame
-                </span>
-              </div>
-              <div className={styles.project_date}>
-                <VscPreview />
-                <span className={styles.task_due_Date}>
-                  Due: Today - 1.00pm
-                </span>
-              </div>
-            </div>
-            <div
-              className={`${styles.project_tab} ${styles.project_tab_accent}`}
-            >
-              <div className={styles.project_taskName}>
-                <VscEditCode />
-                <span className={styles.taskName}>Review Test Code Result</span>
-              </div>
-              <div className={styles.project_date}>
-                <VscPreview />
-                <span className={styles.task_due_Date}>
-                  Due: November 20 - 1.00pm
-                </span>
-              </div>
-            </div>
-            <div
-              className={`${styles.project_tab} ${styles.project_tab_accent}`}
-            >
-              <div className={styles.project_taskName}>
-                <VscEditCode />
-                <span className={styles.taskName}>
-                  Design Relationship Diagram for Database
-                </span>
-              </div>
-              <div className={styles.project_date}>
-                <VscPreview />
-                <span className={styles.task_due_Date}>
-                  Due: November 27, 2026 - 3.00pm
-                </span>
-              </div>
-            </div>
-          </div>
+          {/* PROJECT CONTAINER COMPONENT FOR TODAYS PROJECT */}
+          <ProjectContainer
+            projects={dashBoardData.todayProjects}
+            tab_accent={styles.project_tab_accent}
+            styleOverflow={""}
+            taskIcon={<VscEditCode />}
+          />
         </div>
         {/* UPCOMING PROJECTS SECTION */}
         <div className={styles.dashboard_upcoming_projects_container}>
@@ -130,25 +121,13 @@ function Dashboard() {
             <h2>Upcoming projects</h2>
             <p>Tommorrow and coming week(s)</p>
           </div>
-
-          <div className={styles.dashboard_today_project_container}>
-            <div
-              className={`${styles.project_tab} ${styles.project_tab_in_progress}`}
-            >
-              <div className={styles.project_taskName}>
-                <VscCircuitBoard />
-                <span className={styles.taskName}>
-                  Team Meeting: Project E-Commerce KickOff
-                </span>
-              </div>
-              <div className={styles.project_date}>
-                <VscPreview />
-                <span className={styles.task_due_Date}>
-                  Start Day: December 10, 2026 - 1.00pm
-                </span>
-              </div>
-            </div>
-          </div>
+          {/* PROJECT CONTAINER COMPONENT FOR UPCOMING PROJECT */}
+          <ProjectContainer
+            projects={dashBoardData.upComingProjects}
+            tab_accent={styles.project_tab_in_progress}
+            styleOverflow={""}
+            taskIcon={<VscCircuitBoard />}
+          />
         </div>
         {/* COMPLETED PROJECTS SECTION */}
         <div className={styles.dashboard_upcoming_projects_container}>
@@ -157,24 +136,12 @@ function Dashboard() {
             <p>Great Job These tasks are now off the table.</p>
           </div>
 
-          <div className={styles.dashboard_today_project_container}>
-            <div
-              className={`${styles.project_tab} ${styles.project_tab_success}`}
-            >
-              <div className={styles.project_taskName}>
-                <VscCheckAll />
-                <span className={styles.taskName}>
-                  Finalize Dashboard Design for Task Board
-                </span>
-              </div>
-              <div className={styles.project_date}>
-                <VscPreview />
-                <span className={styles.task_due_Date}>
-                  Completed: November 20, 2026 - 16.03pm
-                </span>
-              </div>
-            </div>
-          </div>
+          <ProjectContainer
+            projects={dashBoardData.completedProjects}
+            tab_accent={styles.project_tab_success}
+            styleOverflow={""}
+            taskIcon={<VscCheckAll />}
+          />
         </div>
       </div>
     </>

@@ -2,7 +2,7 @@
   min-height: 100vh;
   min-width: 81vw;
   background-color: #f6f6f6;
-  padding: 4rem 1rem 0rem 1rem;
+  padding: 2rem 1rem 0rem 1rem;
 }
 .dashboard_container {
   margin: 2rem 1rem;
@@ -88,6 +88,11 @@
   padding: 0rem 0.8rem;
 }
 
+.dashboard_today_project_container_overflow {
+  height: 50vh;
+  overflow-y: auto;
+}
+
 .project_tab {
   display: flex;
   flex-direction: column;
@@ -138,7 +143,7 @@
   }
 }
 
-/* MOBILE S STYLES */
+/* MOBILE M STYLES */
 @media only screen and (min-width: 370px) {
   .dashboard_user_stat_box {
     flex-basis: 5rem;
