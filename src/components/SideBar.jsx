@@ -83,7 +83,7 @@ function SideBar() {
                 className={styles.sidebar_icon_menu}
                 onClick={handleSideBarView}
               />
-              <NavLink className={styles.sidebar_logo}>
+              <NavLink to="" className={styles.sidebar_logo}>
                 <VscSymbolMethod />
                 <span className={styles.sidebar_logo_text}>TaskB</span>
               </NavLink>
@@ -96,7 +96,7 @@ function SideBar() {
               }
             >
               <div className={styles.sidebar_header}>
-                <NavLink className={styles.sidebar_logo}>
+                <NavLink to="" className={styles.sidebar_logo}>
                   <VscSymbolMethod />
                   <span className={styles.sidebar_logo_text}>TaskB</span>
                 </NavLink>
@@ -111,11 +111,11 @@ function SideBar() {
               <div className={styles.sidebar_menu_container}>
                 <section id="main-menu" className={styles.sidebar_menu}>
                   <span className={styles.sidebar_menu_title}>Main Menu</span>
-                  <NavLink className={styles.sidebar_menu_link}>
+                  <NavLink to="" className={styles.sidebar_menu_link}>
                     <VscLibraryCompact className={styles.sidebar_icon_color} />
                     <span className={styles.menu_link_text}>Home</span>
                   </NavLink>
-                  <NavLink className={styles.sidebar_menu_link}>
+                  <NavLink to="MyTasks" className={styles.sidebar_menu_link}>
                     <VscDeveloperTools className={styles.sidebar_icon_color} />
                     <span className={styles.menu_link_text}>My Tasks</span>
                   </NavLink>
@@ -157,7 +157,7 @@ function SideBar() {
               <div className={styles.sidebar_menu_container}>
                 <section id="main-menu" className={styles.sidebar_menu}>
                   <span className={styles.sidebar_menu_title}>Main Menu</span>
-                  <NavLink to="Dashboard" className={styles.sidebar_menu_link}>
+                  <NavLink to="" className={styles.sidebar_menu_link}>
                     <VscLibraryCompact className={styles.sidebar_icon_color} />
                     <span className={styles.menu_link_text}>Home</span>
                   </NavLink>

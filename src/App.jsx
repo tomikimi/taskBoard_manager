@@ -18,7 +18,7 @@ function App() {
             element={<UserRegistration></UserRegistration>}
           ></Route>
           <Route path="TaskB/" element={<MainOutLet></MainOutLet>}>
-            <Route path="Dashboard" element={<Dashboard></Dashboard>}></Route>
+            <Route index element={<Dashboard></Dashboard>}></Route>
             <Route path="MyTasks" element={<MyTasks></MyTasks>}></Route>
           </Route>
           <Route
